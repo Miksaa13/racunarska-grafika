@@ -1,0 +1,24 @@
+# Blender 4.1.0 MTL File: 'None'
+# www.blender.org
+
+newmtl M_Street_Light_Emission
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.279620 0.279620 0.279620
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd M_Street_Light_Emission_baseColor.png
+map_Ke M_Street_Light_Emission_emissive.png
+map_bump -bm 1.000000 M_Street_Light_Emission_normal.png
+
+newmtl M_Street_Light_Pole
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd M_Street_Light_Pole_baseColor.png
+map_bump -bm 1.000000 M_Street_Light_Pole_normal.png
