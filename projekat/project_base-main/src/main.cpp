@@ -66,8 +66,8 @@ struct ProgramState {
     bool CameraMouseMovementUpdateEnabled = true;
     glm::vec3 backpackPosition = glm::vec3(-1.0f,-0.1f,0.0f);
     glm::vec3 stazaPosition = glm::vec3(-2.7f,2.1f,0.0f);
-    glm::vec3 mercPosition = glm::vec3(-2.7f,0.09f,-5.0f);
-    glm::vec3 redbullPosition = glm::vec3(2.1f,0.2f,-10.0f);
+    glm::vec3 mercPosition = glm::vec3(-2.7f,0.11f,-5.0f);
+    glm::vec3 redbullPosition = glm::vec3(2.1f,0.27f,-10.0f);
     glm::vec3 lampaPosition = glm::vec3(3.1f,0.0f,-5.0f);
     glm::vec3 drvoPosition = glm::vec3(5.4f,0.0f,-9.6f);
     float backpackScale = 1.0f;
@@ -373,7 +373,7 @@ int main() {
         model = glm::translate(model,
                                programState->backpackPosition); // translate it down so it's at the center of the scene
         model = glm::rotate(model,(float)235.4,glm::vec3(0.0f,1.0f,0.0f));
-        //model = glm::rotate(model,(float)0.0,glm::vec3(1.0f,0.0f,0.0f));
+        model = glm::rotate(model,glm::radians(-2.0f),glm::vec3(1.0f,0.0f,0.0f));
         model = glm::scale(model, glm::vec3(programState->backpackScale));    // it's a bit too big for our scene, so scale it down
         spShader.setMat4("model", model);
         ourModel.Draw(spShader);
@@ -395,6 +395,7 @@ int main() {
 
         model = glm::translate(model,programState->redbullPosition);
         model = glm::rotate(model,(float)235.4,glm::vec3(0.0f,1.0f,0.01f));
+        model = glm::rotate(model,glm::radians(-1.0f),glm::vec3(1.0f,0.0f,0.0f));
         model = glm::scale(model, glm::vec3(programState->redbullScale));
         spShader.setMat4("model", model);
         redbullModel.Draw(spShader);
@@ -458,7 +459,7 @@ int main() {
         model = glm::translate(model,
                                programState->backpackPosition); // translate it down so it's at the center of the scene
         model = glm::rotate(model,(float)235.4,glm::vec3(0.0f,1.0f,0.0f));
-        //model = glm::rotate(model,(float)0.04,glm::vec3(1.0f,0.0f,0.0f));
+        model = glm::rotate(model,glm::radians(-2.0f),glm::vec3(1.0f,0.0f,0.0f));
         model = glm::scale(model, glm::vec3(programState->backpackScale));    // it's a bit too big for our scene, so scale it down
         ourShader.setMat4("model", model);
         ourModel.Draw(ourShader);
@@ -480,6 +481,7 @@ int main() {
 
         model = glm::translate(model,programState->redbullPosition);
         model = glm::rotate(model,(float)235.4,glm::vec3(0.0f,1.0f,0.01f));
+        model = glm::rotate(model,glm::radians(-1.0f),glm::vec3(1.0f,0.0f,0.0f));
         model = glm::scale(model, glm::vec3(programState->redbullScale));
         ourShader.setMat4("model", model);
         redbullModel.Draw(ourShader);
